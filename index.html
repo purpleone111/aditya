@@ -1,0 +1,718 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Aditya Iyer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Aditya Iyer, stand-up comic from Goa. Low movement, zero screaming, fast setups and dry punchlines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
+<style>
+/* Layout concept: one long spotlit deck. Dark stage, a cream booking sheet at the end.
+   Boldness lives in the oversized name; everything else stays quiet. */
+:root {
+  color-scheme: dark;
+  --ink: #070a14;
+  --ink-2: #0e1324;
+  --line: #222a42;
+  --cream: #f4f0e8;
+  --paper: #fbf9f4;
+  --mute: #9aa1b8;
+  --amber: #f5a83b;
+  --blue: #6b83ff;
+  --blue-strong: #3355ff;
+  --lamp-green: #3ddc84;
+  --lamp-red: #ff5a52;
+  --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --gl: max(16px, env(safe-area-inset-left, 0px));
+  --gr: max(16px, env(safe-area-inset-right, 0px));
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font: 400 1rem/1.55 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--ink);
+  z-index: 40;
+}
+img { display: block; max-width: 100%; }
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+.wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-left: var(--gl);
+  padding-right: var(--gr);
+}
+.sec { padding-block: clamp(4rem, 9vw, 8rem); }
+
+.eyebrow {
+  font: 600 .72rem/1.2 var(--font-body);
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.display {
+  font: 900 clamp(2.5rem, 8vw, 6.4rem)/.9 var(--font-display);
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.display span { display: block; }
+.amber { color: var(--amber); }
+.blue { color: var(--blue); }
+.serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: .9rem 1.4rem;
+  border: 1.5px solid transparent;
+  border-radius: 3px;
+  font: 700 .78rem/1 var(--font-body);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .25s var(--ease), background-color .25s, color .25s, border-color .25s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--amber); color: var(--ink); }
+.btn-primary:hover { background: var(--cream); }
+.btn-ghost { border-color: rgba(244, 240, 232, .32); color: var(--cream); background: transparent; }
+.btn-ghost:hover { border-color: var(--cream); }
+.btn-sm { padding: .65rem 1rem; }
+
+/* Header */
+.bar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  background: rgba(7, 10, 20, .86);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(34, 42, 66, .8);
+}
+.bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: calc(var(--sp, 0) * 100%);
+  background: var(--amber);
+}
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
+.brand {
+  font: 800 .78rem/1 var(--font-body);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.nav { display: none; gap: 1.8rem; }
+.nav a {
+  color: var(--mute);
+  font: 600 .72rem/1 var(--font-body);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav a:hover { color: var(--cream); }
+@media (min-width: 780px) { .nav { display: flex; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero .wrap { position: relative; z-index: 2; padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 4vw, 3.5rem); }
+.name {
+  margin: clamp(1.2rem, 3vw, 2.4rem) 0 clamp(1.4rem, 3vw, 2.4rem);
+  font: 900 23vw/.82 var(--font-display);
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+.name span { display: block; animation: rise 1.1s var(--ease) both; }
+.name .l2 {
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: clamp(1.5px, .25vw, 3px) var(--cream);
+  transition: color .45s, -webkit-text-stroke-color .45s;
+  animation-delay: .12s;
+}
+.name .l2:hover { color: var(--amber); -webkit-text-stroke-color: var(--amber); }
+@keyframes rise { from { transform: translateY(.16em); } to { transform: none; } }
+.tag { font: italic 400 clamp(1.6rem, 3.2vw, 2.4rem)/1.15 var(--font-serif); }
+.sub { margin-top: .5rem; color: var(--mute); }
+.cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+
+.hero-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 30%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 30%);
+}
+.hero-photo img, .pxfill {
+  position: absolute;
+  left: 0;
+  top: -6%;
+  width: 100%;
+  height: 112%;
+  object-fit: cover;
+  object-position: 50% 75%;
+  will-change: transform;
+}
+.spot {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 260px at var(--mx, 57%) var(--my, 58%), rgba(7, 10, 20, 0) 0, rgba(7, 10, 20, 0) 30%, rgba(7, 10, 20, .55) 100%);
+}
+@media (min-width: 900px) {
+  .name { font-size: min(15.5vw, 15rem); }
+  .hero-photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 52%;
+    aspect-ratio: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 38%);
+    mask-image: linear-gradient(to right, transparent 0, #000 38%);
+  }
+}
+
+/* Generic two-column layout */
+.cols { display: grid; gap: 2.5rem; align-items: center; }
+.photo { position: relative; overflow: hidden; aspect-ratio: 4 / 5; max-height: 640px; width: 100%; }
+@media (min-width: 900px) {
+  .cols.photo-left { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 5rem); }
+  .cols.photo-right { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 5rem); }
+  .photo.fade-r { -webkit-mask-image: linear-gradient(to right, #000 62%, transparent 100%); mask-image: linear-gradient(to right, #000 62%, transparent 100%); }
+  .photo.fade-l { -webkit-mask-image: linear-gradient(to left, #000 62%, transparent 100%); mask-image: linear-gradient(to left, #000 62%, transparent 100%); }
+}
+.copy { min-width: 0; }
+
+/* Route */
+.route h2 { margin-top: 1.2rem; }
+.tl { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; gap: 1.8rem; position: relative; }
+.tl::before, .tl::after { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+.tl::after { background: var(--amber); transform-origin: top left; transform: scaleY(var(--p, 1)); }
+.tl li { position: relative; padding-left: 2.4rem; min-width: 0; }
+.tl .node {
+  position: absolute;
+  left: 0;
+  top: .3rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--amber);
+  background: var(--ink);
+  transition: background-color .4s;
+}
+.tl:not(.live) li:last-child .node, .tl.live li.on .node { background: var(--amber); }
+.step-n { display: block; font: 600 .7rem/1 var(--font-body); letter-spacing: .2em; color: var(--blue); }
+.tl h3 { margin-top: .5rem; font: 800 clamp(1.4rem, 2.4vw, 1.8rem)/1.05 var(--font-display); letter-spacing: -.03em; }
+.tl p { margin-top: .3rem; color: var(--mute); font-size: .95rem; }
+@media (min-width: 720px) {
+  .tl { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+  .tl::before, .tl::after { left: 8px; right: 0; top: 7px; bottom: auto; height: 2px; width: auto; }
+  .tl::after { transform-origin: left; transform: scaleX(var(--p, 1)); }
+  .tl li { padding: 2.2rem 0 0; }
+  .tl .node { top: 0; }
+}
+.quote { margin-top: 2.6rem; font: italic 400 clamp(1.3rem, 2.4vw, 1.8rem)/1.35 var(--font-serif); color: rgba(244, 240, 232, .85); max-width: 34ch; }
+
+/* Record */
+.record { position: relative; isolation: isolate; overflow: hidden; }
+.record .bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.record .bg img { opacity: .3; filter: saturate(.7); }
+.record .bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, var(--ink) 0, rgba(7, 10, 20, .5) 38%, var(--ink) 100%); }
+.record h2 { margin-top: 1.2rem; }
+.stats { list-style: none; margin: clamp(2rem, 5vw, 3.5rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.2rem 1.2rem; }
+@media (min-width: 900px) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; } }
+.stats li { border-left: 1px solid rgba(107, 131, 255, .55); padding-left: 1.1rem; min-width: 0; }
+.big { display: block; font: 900 clamp(3.4rem, 9vw, 7rem)/.9 var(--font-display); letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
+.big .u { color: var(--blue); font-size: .38em; letter-spacing: -.01em; margin-left: .08em; }
+.stats .lbl { display: block; margin-top: .9rem; font: 600 .7rem/1.7 var(--font-body); letter-spacing: .2em; text-transform: uppercase; color: var(--mute); }
+.lineup { margin-top: clamp(2.5rem, 6vw, 4rem); padding-top: 1.8rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.6rem; }
+.names { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.2rem; font: 800 clamp(1.4rem, 3vw, 2.2rem)/1.1 var(--font-display); letter-spacing: -.03em; }
+.dot { width: .9rem; height: .9rem; border-radius: 50%; background: var(--blue-strong); display: inline-block; }
+
+/* Material */
+.material h2 { margin-top: 1.2rem; }
+.topics { list-style: none; margin: 2.2rem 0 0; padding: 0; border-bottom: 1px solid var(--line); }
+.topics li { display: flex; align-items: baseline; gap: 1.2rem; padding: 1.2rem 0; border-top: 1px solid var(--line); transition: transform .4s var(--ease), color .3s; }
+.topics li:hover { transform: translateX(.6rem); color: var(--amber); }
+.topics .n { font: 600 .75rem/1 var(--font-body); letter-spacing: .2em; color: var(--amber); }
+.topics .t { font: 800 clamp(1.5rem, 3.6vw, 2.7rem)/1.05 var(--font-display); letter-spacing: -.035em; text-wrap: balance; min-width: 0; }
+.aside { margin-top: 2rem; max-width: 32ch; font: italic 400 clamp(1.15rem, 2vw, 1.4rem)/1.4 var(--font-serif); color: var(--blue); }
+
+/* Stage gallery */
+.stage h2 { margin-top: 1.2rem; }
+.stage-row { display: flex; gap: .8rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-block: 2.2rem .8rem; }
+.g-item { flex: 0 0 min(72vw, 300px); scroll-snap-align: start; min-width: 0; }
+.g-item button { display: block; width: 100%; aspect-ratio: 3 / 4; padding: 0; border: 0; background: var(--ink-2); overflow: hidden; cursor: zoom-in; position: relative; }
+.g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease), filter .5s; filter: brightness(.88); }
+.g-item button:hover img, .g-item button:focus-visible img { transform: scale(1.05); filter: brightness(1.05); }
+.g-item .cap { position: absolute; left: .8rem; bottom: .8rem; font: 600 .65rem/1 var(--font-body); letter-spacing: .22em; text-transform: uppercase; color: var(--cream); background: rgba(7, 10, 20, .7); padding: .45rem .6rem; opacity: 0; transition: opacity .3s; }
+.g-item button:hover .cap, .g-item button:focus-visible .cap { opacity: 1; }
+@media (min-width: 960px) {
+  .stage-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); overflow: visible; padding-bottom: 2.6rem; }
+  .g-item { flex: none; }
+  .g-item:nth-child(even) { transform: translateY(1.6rem); }
+}
+
+/* The set */
+.set h2 .c1 { color: var(--cream); }
+.set h2 .c2 { color: var(--blue); }
+.set h2 .c3 { color: var(--amber); }
+.light { --c: var(--lamp-green); margin-top: 2.2rem; max-width: 30rem; border: 1px solid var(--line); background: var(--ink-2); padding: 1.3rem 1.4rem; display: grid; gap: 1.1rem; }
+.light[data-state="amber"] { --c: var(--amber); }
+.light[data-state="red"] { --c: var(--lamp-red); }
+.lamps { display: flex; gap: 1rem; }
+.lp { width: 3.4rem; height: 3.4rem; padding: 0; border-radius: 50%; border: 1.5px solid var(--line); background: var(--ink); display: grid; place-items: center; cursor: pointer; transition: border-color .3s, transform .25s var(--ease); }
+.lp:hover { transform: translateY(-2px); }
+.lp[data-state="green"] { --lc: var(--lamp-green); }
+.lp[data-state="amber"] { --lc: var(--amber); }
+.lp[data-state="red"] { --lc: var(--lamp-red); }
+.lp i { width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--lc); opacity: .28; transition: opacity .3s, box-shadow .3s; }
+.lp.on { border-color: var(--lc); }
+.lp.on i { opacity: 1; box-shadow: 0 0 22px var(--lc), 0 0 6px var(--lc); }
+.cue { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; }
+.cue b { font: 900 1.7rem/1 var(--font-display); letter-spacing: -.03em; color: var(--c); }
+.cue span { color: var(--cream); }
+.hint { font-size: .85rem; color: var(--mute); }
+.clock-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.2rem; }
+.clock-foot p { font-size: .85rem; color: var(--mute); min-width: 0; }
+
+/* Booking */
+.book { background: var(--cream); color: var(--ink); color-scheme: light; }
+.book .eyebrow { color: var(--blue-strong); }
+.book h2 { margin-top: 1.2rem; }
+.book h2 .hl { color: var(--blue-strong); }
+.who { margin-top: 1.6rem; font-size: 1.05rem; color: rgba(7, 10, 20, .75); }
+.who b { display: block; color: var(--ink); font-weight: 600; }
+.form { margin-top: 2rem; display: grid; gap: 1rem; max-width: 34rem; }
+.row2 { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.form label { display: grid; gap: .4rem; min-width: 0; font: 700 .66rem/1.2 var(--font-body); letter-spacing: .2em; text-transform: uppercase; color: rgba(7, 10, 20, .7); }
+.form input, .form select, .form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: .7rem .8rem;
+  border: 1.5px solid rgba(7, 10, 20, .35);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 500 1rem/1.4 var(--font-body);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.form textarea { resize: vertical; min-height: 8.5rem; }
+.form :focus-visible { outline: 2px solid var(--blue-strong); outline-offset: 2px; }
+.btn-blue { background: var(--blue-strong); color: var(--cream); }
+.btn-blue:hover { background: var(--ink); }
+.book .btn-ghost { border-color: rgba(7, 10, 20, .4); color: var(--ink); }
+.status { min-height: 1.4em; font-size: .9rem; color: rgba(7, 10, 20, .75); }
+.book .photo { max-height: 760px; }
+
+/* Footer */
+footer { padding-block: 2rem calc(2rem + 0px); border-top: 1px solid var(--line); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem 2rem; font: 600 .68rem/1.4 var(--font-body); letter-spacing: .24em; text-transform: uppercase; color: var(--mute); }
+
+/* Lightbox */
+.lb { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; background: rgba(4, 6, 12, .95); padding: calc(3.5rem + env(safe-area-inset-top, 0px)) calc(1rem + env(safe-area-inset-right, 0px)) calc(1rem + env(safe-area-inset-bottom, 0px)) calc(1rem + env(safe-area-inset-left, 0px)); }
+.lb.open { display: flex; }
+.lb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.lb button { position: absolute; border: 1px solid rgba(244, 240, 232, .3); background: rgba(7, 10, 20, .7); color: var(--cream); width: 2.8rem; height: 2.8rem; border-radius: 50%; font-size: 1.2rem; line-height: 1; cursor: pointer; }
+.lb button:hover { border-color: var(--amber); color: var(--amber); }
+.lb .x { top: calc(.8rem + env(safe-area-inset-top, 0px)); right: calc(.8rem + env(safe-area-inset-right, 0px)); }
+.lb .pv { left: calc(.6rem + env(safe-area-inset-left, 0px)); top: 50%; transform: translateY(-50%); }
+.lb .nx { right: calc(.6rem + env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); }
+.lb .ct { position: absolute; left: calc(1rem + env(safe-area-inset-left, 0px)); top: calc(1.1rem + env(safe-area-inset-top, 0px)); font: 600 .7rem/1 var(--font-body); letter-spacing: .22em; text-transform: uppercase; color: var(--mute); }
+
+/* Scroll reveals: transform only, so everything stays readable at rest */
+.rv { transform: translateY(26px); transition: transform .9s var(--ease); }
+.rv.in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .rv { transform: none; }
+}
+</style>
+
+<header class="bar" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Aditya Iyer</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#route">Route</a>
+      <a href="#record">Record</a>
+      <a href="#material">Material</a>
+      <a href="#stage">On stage</a>
+      <a href="#set">The set</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#book">Book</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="h-name">
+    <div class="wrap">
+      <p class="eyebrow">Stand-up comedy · Goa, India</p>
+      <h1 class="name" id="h-name"><span class="l1">Aditya</span><span class="l2">Iyer</span></h1>
+      <p class="tag">Low movement. Zero screaming.</p>
+      <p class="sub">Fast setups, dry punchlines.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#book">Book Aditya</a>
+        <a class="btn btn-ghost" href="#set">See the set</a>
+      </div>
+    </div>
+    <div class="hero-photo" id="heroPhoto">
+      <img src="img/hero.jpg" data-px="0.06" alt="Aditya Iyer performing stand-up under a warm spotlight, microphone in hand" width="1000" height="1333" fetchpriority="high">
+      <span class="spot" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <section class="route sec" id="route" aria-labelledby="h-route">
+    <div class="wrap">
+      <div class="cols photo-left">
+        <figure class="photo fade-r" data-rv>
+          <img class="pxfill" src="img/route.jpg" data-px="0.06" alt="Aditya in a striped shirt holding a microphone, lit by warm orange light" width="1000" height="1333" loading="lazy">
+        </figure>
+        <div class="copy">
+          <p class="eyebrow">The route to the mic</p>
+          <h2 class="display" id="h-route"><span>Hospitality.</span><span>Café. Bar.</span><span class="amber">Then the mic.</span></h2>
+          <ol class="tl" id="tl">
+            <li><span class="node" aria-hidden="true"></span><span class="step-n">01</span><h3>Marriott</h3><p>Hospitality</p></li>
+            <li><span class="node" aria-hidden="true"></span><span class="step-n">02</span><h3>Himachal</h3><p>Ran a café</p></li>
+            <li><span class="node" aria-hidden="true"></span><span class="step-n">03</span><h3>Goa</h3><p>Bartending</p></li>
+            <li><span class="node" aria-hidden="true"></span><span class="step-n">04</span><h3>Stand-up</h3><p>Less standing on your feet</p></li>
+          </ol>
+          <blockquote class="quote" style="margin-inline:0;margin-bottom:0;">“Chose stand-up because there’s still less standing on your feet.”</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="record sec" id="record" aria-labelledby="h-record">
+    <div class="bg" aria-hidden="true">
+      <img class="pxfill" src="img/record.jpg" data-px="0.08" alt="" width="825" height="1100" loading="lazy">
+    </div>
+    <div class="wrap">
+      <p class="eyebrow">The track record, so far</p>
+      <h2 class="display" id="h-record"><span>Nine months.</span><span>Forty-plus shows.</span></h2>
+      <ul class="stats">
+        <li data-rv><span class="big"><span class="num" data-to="9">9</span></span><span class="lbl">Months<br>in comedy</span></li>
+        <li data-rv data-delay="80"><span class="big"><span class="num" data-to="40">40</span><span class="u">+</span></span><span class="lbl">Shows with<br>Goan Comedy Cartel</span></li>
+        <li data-rv data-delay="160"><span class="big"><span class="num" data-to="2">2</span></span><span class="lbl">Cities<br>Goa &amp; Bangalore</span></li>
+        <li data-rv data-delay="240"><span class="big"><span class="num" data-to="12">12</span><span class="u">min</span></span><span class="lbl">Tight set<br>High joke density</span></li>
+      </ul>
+      <p class="lineup" data-rv>
+        <span class="eyebrow">Shared lineups with</span>
+        <span class="names"><span>Arvind Sundar</span><i class="dot" aria-hidden="true"></i><span>Akash Mehta</span></span>
+      </p>
+    </div>
+  </section>
+
+  <section class="material sec" id="material" aria-labelledby="h-material">
+    <div class="wrap">
+      <div class="cols photo-right">
+        <div class="copy">
+          <p class="eyebrow">The material</p>
+          <h2 class="display" id="h-material"><span>What he’s</span><span>on about</span></h2>
+          <ol class="topics">
+            <li><span class="n">01</span><span class="t">Small-town friction</span></li>
+            <li><span class="n">02</span><span class="t">Relationship jargon</span></li>
+            <li><span class="n">03</span><span class="t">Why shampoo is just fraud and feces</span></li>
+          </ol>
+          <p class="aside">Occasionally, a hair scrunchie comes off mid-set to explain genetic hairfall.</p>
+        </div>
+        <figure class="photo fade-l" data-rv>
+          <img class="pxfill" src="img/material.jpg" data-px="0.06" alt="Aditya mid-set with one hand on his head, microphone in the other" width="1000" height="1333" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage sec" id="stage" aria-labelledby="h-stage" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">On stage</p>
+      <h2 class="display" id="h-stage">Rooms, rigs &amp; <span class="amber" style="display:inline">outfits</span></h2>
+      <div class="stage-row" id="gallery" role="list">
+        <div class="g-item" role="listitem" data-rv><button type="button" data-i="0" aria-label="Open photo 1 of 5"><img src="img/g1.jpg" alt="Aditya on stage under a thatched roof in a black graphic tee" width="750" height="1000" loading="lazy"><span class="cap">View</span></button></div>
+        <div class="g-item" role="listitem" data-rv data-delay="70"><button type="button" data-i="1" aria-label="Open photo 2 of 5"><img src="img/g2.jpg" alt="Aditya mid-set in a black shirt embroidered with auto-rickshaws" width="750" height="1000" loading="lazy"><span class="cap">View</span></button></div>
+        <div class="g-item" role="listitem" data-rv data-delay="140"><button type="button" data-i="2" aria-label="Open photo 3 of 5"><img src="img/g3.jpg" alt="Aditya in profile at the mic in a dark shirt with a red cloud print" width="750" height="1000" loading="lazy"><span class="cap">View</span></button></div>
+        <div class="g-item" role="listitem" data-rv data-delay="210"><button type="button" data-i="3" aria-label="Open photo 4 of 5"><img src="img/g4.jpg" alt="Aditya in a red floral shirt smiling down at the room under an open-frame roof" width="750" height="1000" loading="lazy"><span class="cap">View</span></button></div>
+        <div class="g-item" role="listitem" data-rv data-delay="280"><button type="button" data-i="4" aria-label="Open photo 5 of 5"><img src="img/g5.jpg" alt="Aditya grinning at the mic in front of a tree-of-life tapestry" width="750" height="1000" loading="lazy"><span class="cap">View</span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="set sec" id="set" aria-labelledby="h-set" style="padding-top:0">
+    <div class="wrap">
+      <div class="cols photo-right">
+        <div class="copy">
+          <p class="eyebrow">The set</p>
+          <h2 class="display" id="h-set"><span class="c1">12-minute set.</span><span class="c2">High joke density.</span><span class="c3">Zero wasted words.</span></h2>
+          <div class="light" id="light" role="group" aria-label="Back-of-room light" data-state="green">
+            <div class="lamps">
+              <button type="button" class="lp" data-state="green" aria-pressed="true" aria-label="Green light"><i></i></button>
+              <button type="button" class="lp" data-state="amber" aria-pressed="false" aria-label="Amber light"><i></i></button>
+              <button type="button" class="lp" data-state="red" aria-pressed="false" aria-label="Red light"><i></i></button>
+            </div>
+            <p class="cue"><b id="cueHead">Green</b><span id="cueTxt">Keep going.</span></p>
+            <p class="hint">The back-of-room light every comic watches. Tap a lamp.</p>
+          </div>
+        </div>
+        <figure class="photo fade-l" data-rv>
+          <img class="pxfill" src="img/set.jpg" data-px="0.06" alt="Aditya mid-set with one hand raised in a gesture" width="1000" height="1333" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="book sec" id="book" aria-labelledby="h-book">
+    <div class="wrap">
+      <div class="cols photo-right">
+        <div class="copy">
+          <p class="eyebrow">Book Aditya Iyer</p>
+          <h2 class="display" id="h-book"><span>Hire to</span><span>unlock full</span><span class="hl">joke access.</span></h2>
+          <p class="who"><b>Aditya Iyer</b>Stand-up comic · Goa, India</p>
+          <form class="form" id="bk" autocomplete="off">
+            <label for="bkName">Your name
+              <input id="bkName" type="text" placeholder="Name or organisation">
+            </label>
+            <div class="row2">
+              <label for="bkEvent">Type of event
+                <select id="bkEvent">
+                  <option>comedy night</option>
+                  <option>private event</option>
+                  <option>corporate event</option>
+                  <option>college show</option>
+                  <option>festival</option>
+                </select>
+              </label>
+              <label for="bkCity">City
+                <input id="bkCity" type="text" placeholder="Goa, Bangalore…">
+              </label>
+            </div>
+            <label for="bkDate">Date
+              <input id="bkDate" type="date">
+            </label>
+            <label for="bkMsg">Your booking message
+              <textarea id="bkMsg" readonly></textarea>
+            </label>
+            <div class="clock-foot">
+              <button type="button" class="btn btn-blue" id="bkCopy">Copy message</button>
+              <span class="status" id="bkStatus" role="status"></span>
+            </div>
+          </form>
+        </div>
+        <figure class="photo" data-rv>
+          <img class="pxfill" src="img/book.jpg" data-px="0.05" alt="Aditya at the mic in a black shirt embroidered with elephants and palm trees" width="1000" height="1333" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Aditya Iyer · Stand-up comic · Goa, India</span>
+    <span>Low movement. Zero screaming.</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <span class="ct" id="lbCt"></span>
+  <button type="button" class="x" id="lbX" aria-label="Close">✕</button>
+  <button type="button" class="pv" id="lbP" aria-label="Previous photo">←</button>
+  <img id="lbImg" alt="">
+  <button type="button" class="nx" id="lbN" aria-label="Next photo">→</button>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+
+  /* Scroll reveals (transform only) */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    $$('[data-rv]').forEach(function (el) {
+      el.classList.add('rv');
+      if (el.dataset.delay) el.style.transitionDelay = el.dataset.delay + 'ms';
+      rio.observe(el);
+    });
+
+    /* Count-up: the real number is in the markup, animation starts when it scrolls in */
+    var cio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        cio.unobserve(e.target);
+        var el = e.target, to = +el.dataset.to, t0 = performance.now(), dur = 1400;
+        el.textContent = '0';
+        (function step(now) {
+          var k = clamp((now - t0) / dur, 0, 1);
+          el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3)));
+          if (k < 1) requestAnimationFrame(step);
+        })(t0);
+      });
+    }, { threshold: 0.6 });
+    $$('.num').forEach(function (n) { cio.observe(n); });
+  }
+
+  /* Scroll-linked: header progress, route timeline, photo parallax */
+  var bar = $('.bar'), tl = $('#tl'), tlItems = $$('li', tl), pxs = $$('[data-px]');
+  if (!reduce) tl.classList.add('live');
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    var vh = window.innerHeight || 800;
+    var max = document.documentElement.scrollHeight - vh;
+    bar.style.setProperty('--sp', max > 0 ? clamp(window.scrollY / max, 0, 1).toFixed(4) : 0);
+    if (reduce) return;
+    var r = tl.getBoundingClientRect();
+    var p = clamp((vh * 0.9 - r.top) / (r.height + vh * 0.25), 0, 1);
+    tl.style.setProperty('--p', p.toFixed(4));
+    tlItems.forEach(function (li, i) { li.classList.toggle('on', p >= i / (tlItems.length - 1) - 0.001 && p > 0); });
+    pxs.forEach(function (img) {
+      var box = img.parentElement.getBoundingClientRect();
+      if (box.bottom < -100 || box.top > vh + 100) return;
+      var off = (box.top + box.height / 2 - vh / 2) * parseFloat(img.dataset.px);
+      var lim = box.height * 0.055;
+      img.style.transform = 'translate3d(0,' + clamp(off, -lim, lim).toFixed(1) + 'px,0)';
+    });
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', req);
+  onScroll();
+
+  /* Hero spotlight follows the pointer, eases back onto his face */
+  var hero = $('.hero'), hp = $('#heroPhoto');
+  if (!reduce && hero && hp) {
+    var HX = 57, HY = 58, tx = HX, ty = HY, cx = HX, cy = HY, raf = 0;
+    var spin = function () {
+      cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+      hp.style.setProperty('--mx', cx.toFixed(2) + '%');
+      hp.style.setProperty('--my', cy.toFixed(2) + '%');
+      raf = (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) ? requestAnimationFrame(spin) : 0;
+    };
+    hero.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var b = hp.getBoundingClientRect();
+      tx = clamp((e.clientX - b.left) / b.width * 100, 0, 100);
+      ty = clamp((e.clientY - b.top) / b.height * 100, 0, 100);
+      if (!raf) raf = requestAnimationFrame(spin);
+    });
+    hero.addEventListener('pointerleave', function () {
+      tx = HX; ty = HY;
+      if (!raf) raf = requestAnimationFrame(spin);
+    });
+  }
+
+  /* Back-of-room light */
+  var cues = { green: ['Green', 'Keep going.'], amber: ['Amber', 'Two minutes left.'], red: ['Red', 'Wrap it up.'] };
+  var lps = $$('.lp'), cueHead = $('#cueHead'), cueTxt = $('#cueTxt'), lightBox = $('#light');
+  function setLight(s) {
+    lps.forEach(function (b) {
+      var on = b.dataset.state === s;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    cueHead.textContent = cues[s][0];
+    cueTxt.textContent = cues[s][1];
+    lightBox.dataset.state = s;
+  }
+  lps.forEach(function (b) { b.addEventListener('click', function () { setLight(b.dataset.state); }); });
+  setLight('green');
+
+  /* Gallery lightbox */
+  var lb = $('#lb'), lbImg = $('#lbImg'), lbCt = $('#lbCt'), shots = $$('#gallery button'), cur = 0, opener = null;
+  function show(i) {
+    cur = (i + shots.length) % shots.length;
+    var img = $('img', shots[cur]);
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.alt;
+    lbCt.textContent = (cur + 1) + ' / ' + shots.length;
+  }
+  function openLb(i, from) {
+    opener = from; show(i);
+    lb.hidden = false; lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    $('#lbX').focus();
+  }
+  function closeLb() {
+    lb.classList.remove('open'); lb.hidden = true;
+    document.body.style.overflow = '';
+    if (opener) opener.focus();
+  }
+  shots.forEach(function (b, i) { b.addEventListener('click', function () { openLb(i, b); }); });
+  $('#lbX').addEventListener('click', closeLb);
+  $('#lbP').addEventListener('click', function () { show(cur - 1); });
+  $('#lbN').addEventListener('click', function () { show(cur + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowLeft') show(cur - 1);
+    else if (e.key === 'ArrowRight') show(cur + 1);
+    else if (e.key === 'Tab') {
+      var f = [$('#lbX'), $('#lbP'), $('#lbN')], i = f.indexOf(document.activeElement);
+      e.preventDefault();
+      f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+    }
+  });
+
+  /* Booking message builder */
+  var form = $('#bk'), fName = $('#bkName'), fEvent = $('#bkEvent'), fCity = $('#bkCity'), fDate = $('#bkDate'), msg = $('#bkMsg'), st = $('#bkStatus');
+  function build() {
+    var n = fName.value.trim() || '[your name]';
+    var c = fCity.value.trim() || '[city]';
+    var d = '[date]';
+    if (fDate.value) {
+      var dt = new Date(fDate.value + 'T00:00:00');
+      if (!isNaN(dt)) d = dt.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+    msg.value = 'Hi Aditya, this is ' + n + '. We’re hosting a ' + fEvent.value + ' in ' + c + ' on ' + d +
+      ' and would like to book you for a 12-minute set. Are you free that day, and what would you need from us?';
+    st.textContent = '';
+  }
+  ['input', 'change'].forEach(function (ev) { form.addEventListener(ev, build); });
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+  $('#bkCopy').addEventListener('click', function () {
+    function ok() { st.textContent = 'Copied. Send it wherever you reach Aditya.'; }
+    function fail() { msg.focus(); msg.select(); st.textContent = 'Message selected. Press Ctrl+C or Cmd+C to copy.'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(msg.value).then(ok, fail);
+    } else { fail(); }
+  });
+  build();
+})();
+</script>
+
+</body></html>
