@@ -2,6 +2,18 @@
 <title>Aditya Iyer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Aditya Iyer, stand-up comic from Goa. Low movement, zero screaming, fast setups and dry punchlines.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aditya Iyer | Stand-up comic, Goa">
+<meta property="og:description" content="Low movement. Zero screaming. Fast setups, dry punchlines.">
+<meta property="og:url" content="https://YOUR-DOMAIN/">
+<meta property="og:image" content="https://YOUR-DOMAIN/img/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aditya Iyer on stage with a microphone. Stand-up comedy, Goa, India.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aditya Iyer | Stand-up comic, Goa">
+<meta name="twitter:description" content="Low movement. Zero screaming. Fast setups, dry punchlines.">
+<meta name="twitter:image" content="https://YOUR-DOMAIN/img/social-preview.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
@@ -281,13 +293,12 @@ a { color: inherit; }
 }
 
 
-/* Stage video */
-.reel { margin-top: clamp(2.5rem, 6vw, 4.5rem); display: grid; gap: 1.6rem; align-items: center; }
-.reel-frame { position: relative; width: 100%; max-width: 340px; aspect-ratio: 9 / 16; background: var(--ink-2); border: 1px solid var(--line); overflow: hidden; }
-.reel-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
-.reel .copy h3 { margin-top: 1rem; font: 800 clamp(1.6rem, 3.4vw, 2.6rem)/1.05 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; }
-.reel .copy p.note { margin-top: .8rem; color: var(--mute); max-width: 34ch; }
-@media (min-width: 720px) { .reel { grid-template-columns: auto minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); } }
+/* Set video + live clock */
+.set-video { margin: 0; justify-self: center; width: 100%; max-width: 360px; aspect-ratio: 9 / 16; max-height: 640px; position: relative; background: var(--ink-2); border: 1px solid var(--line); overflow: hidden; }
+.set-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
+.clk { font-variant-numeric: tabular-nums; }
+.set h2 .of { color: var(--mute); }
+.set h2 .c1.live .clk { color: var(--amber); }
 
 /* The set */
 .set h2 .c1 { color: var(--cream); }
@@ -431,7 +442,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <li data-rv><span class="big"><span class="num" data-to="9">9</span></span><span class="lbl">Months<br>in comedy</span></li>
         <li data-rv data-delay="80"><span class="big"><span class="num" data-to="40">40</span><span class="u">+</span></span><span class="lbl">Shows with<br>Goan Comedy Cartel</span></li>
         <li data-rv data-delay="160"><span class="big"><span class="num" data-to="2">2</span></span><span class="lbl">Cities<br>Goa &amp; Bangalore</span></li>
-        <li data-rv data-delay="240"><span class="big"><span class="num" data-to="12">12</span><span class="u">min</span></span><span class="lbl">Tight set<br>High joke density</span></li>
+        <li data-rv data-delay="240"><span class="big"><span class="num" data-to="35">35</span><span class="u">sec</span></span><span class="lbl">Clip, live<br>High joke density</span></li>
       </ul>
       <p class="lineup" data-rv>
         <span class="eyebrow">Shared lineups with</span>
@@ -472,19 +483,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div class="g-item" role="listitem" data-rv data-delay="280"><button type="button" data-i="4" aria-label="Open photo 5 of 5"><img src="img/g5.jpg" alt="Aditya grinning at the mic in front of a tree-of-life tapestry" width="750" height="1000" loading="lazy"><span class="cap">View</span></button></div>
       </div>
 
-      <div class="reel" data-rv>
-        <div class="reel-frame">
-          <video controls playsinline preload="metadata" poster="video/dot-in-the-park-poster.jpg" aria-label="Aditya Iyer performing live at Dot in the Park">
-            <source src="video/dot-in-the-park.mp4" type="video/mp4">
-            Your browser can't play this video. <a href="video/dot-in-the-park.mp4">Download it here</a>.
-          </video>
-        </div>
-        <div class="copy">
-          <p class="eyebrow">Live clip</p>
-          <h3>Dot in <span class="amber">the Park</span></h3>
-          <p class="note">A slice of the set, in the room. Tap play, sound on.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -493,7 +491,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="cols photo-right">
         <div class="copy">
           <p class="eyebrow">The set</p>
-          <h2 class="display" id="h-set"><span class="c1">12-minute set.</span><span class="c2">High joke density.</span><span class="c3">Zero wasted words.</span></h2>
+          <h2 class="display" id="h-set"><span class="c1" id="setClock" role="timer" aria-live="off"><span class="clk" id="clk">0:00</span> <span class="of">/ <span id="clkTotal">0:35</span></span></span><span class="c2">High joke density.</span><span class="c3">Zero wasted words.</span></h2>
           <div class="light" id="light" role="group" aria-label="Back-of-room light" data-state="green">
             <div class="lamps">
               <button type="button" class="lp" data-state="green" aria-pressed="true" aria-label="Green light"><i></i></button>
@@ -504,8 +502,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <p class="hint">The back-of-room light every comic watches. Tap a lamp.</p>
           </div>
         </div>
-        <figure class="photo fade-l" data-rv>
-          <img class="pxfill" src="img/set.jpg" data-px="0.06" alt="Aditya mid-set with one hand raised in a gesture" width="1000" height="1333" loading="lazy">
+        <figure class="set-video" data-rv>
+          <video id="setVid" controls playsinline preload="metadata" poster="video/dot-in-the-park-poster.jpg" aria-label="Aditya Iyer performing live at Dot in the Park">
+            <source src="video/dot-in-the-park.mp4" type="video/mp4">
+            Your browser can't play this video. <a href="video/dot-in-the-park.mp4">Download it here</a>.
+          </video>
         </figure>
       </div>
     </div>
@@ -543,8 +544,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
               <textarea id="bkMsg" readonly></textarea>
             </label>
             <div class="clock-foot">
-              <button type="button" class="btn btn-blue" id="bkCopy">Copy message</button>
-              <span class="status" id="bkStatus" role="status"></span>
+              <a class="btn btn-blue" id="bkSend" href="mailto:contact@goancomedycartel.com">Send email</a>
+              <span class="status" id="bkStatus">Opens your email app, addressed to contact@goancomedycartel.com.</span>
             </div>
           </form>
         </div>
@@ -711,8 +712,22 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     }
   });
 
+  /* Set clock: starts when the video plays, follows the video */
+  var sv = $('#setVid'), clk = $('#clk'), clkT = $('#clkTotal'), clkWrap = $('#setClock');
+  function mmss(t) { t = Math.max(0, Math.floor(t)); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
+  if (sv && clk) {
+    function tick() { clk.textContent = mmss(sv.currentTime); }
+    sv.addEventListener('loadedmetadata', function () { if (isFinite(sv.duration)) clkT.textContent = mmss(Math.round(sv.duration)); });
+    sv.addEventListener('play', function () { clkWrap.classList.add('live'); });
+    sv.addEventListener('pause', function () { clkWrap.classList.remove('live'); });
+    sv.addEventListener('ended', function () { clkWrap.classList.remove('live'); clk.textContent = clkT.textContent; });
+    sv.addEventListener('timeupdate', tick);
+    sv.addEventListener('seeked', tick);
+  }
+
   /* Booking message builder */
-  var form = $('#bk'), fName = $('#bkName'), fEvent = $('#bkEvent'), fCity = $('#bkCity'), fDate = $('#bkDate'), msg = $('#bkMsg'), st = $('#bkStatus');
+  var form = $('#bk'), fName = $('#bkName'), fEvent = $('#bkEvent'), fCity = $('#bkCity'), fDate = $('#bkDate'), msg = $('#bkMsg'), send = $('#bkSend');
+  var MAIL = 'contact@goancomedycartel.com', SUBJECT = 'Booking enquiry: Aditya Iyer';
   function build() {
     var n = fName.value.trim() || '[your name]';
     var c = fCity.value.trim() || '[city]';
@@ -723,17 +738,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     }
     msg.value = 'Hi Aditya, this is ' + n + '. We’re hosting a ' + fEvent.value + ' in ' + c + ' on ' + d +
       ' and would like to book you for a 12-minute set. Are you free that day, and what would you need from us?';
-    st.textContent = '';
+    send.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent(SUBJECT) + '&body=' + encodeURIComponent(msg.value);
   }
   ['input', 'change'].forEach(function (ev) { form.addEventListener(ev, build); });
   form.addEventListener('submit', function (e) { e.preventDefault(); });
-  $('#bkCopy').addEventListener('click', function () {
-    function ok() { st.textContent = 'Copied. Send it wherever you reach Aditya.'; }
-    function fail() { msg.focus(); msg.select(); st.textContent = 'Message selected. Press Ctrl+C or Cmd+C to copy.'; }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(msg.value).then(ok, fail);
-    } else { fail(); }
-  });
   build();
 })();
 </script>
